@@ -7,7 +7,7 @@ Project ini dibuat sebagai **technical test**.
 ---
 ## ⚙️ Cara Instalasi & Setup Lokal
 
-### 1️⃣ Clone Repository
+1️⃣ Clone Repository
 ```bash
 git clone https://github.com/AriqNaufalRabbani/inventory-user-management
 cd inventory-user-management
