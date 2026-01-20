@@ -81,13 +81,13 @@ customer@example.com
 
 ### 📦 Inventory
 - Menampilkan daftar produk
-- Menambah produk (Admin & Seller)
+- Menambah produk
 - Menjual produk (mengurangi stok)
 - Validasi stok agar tidak minus
 
 ### 👤 User Management
-- Menampilkan daftar user (Admin only)
-- Mengubah role user (Admin only)
+- Menampilkan daftar user
+- Mengubah role user
 
 ### 📄 API Documentation
 - Dokumentasi API menggunakan **Swagger UI**
