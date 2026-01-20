@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Inventory Management System
 
-## Getting Started
+Aplikasi **Inventory Management System** berbasis **Next.js (App Router)** dengan **MySQL** dan **NextAuth (Credentials)** sebagai sistem autentikasi dan role-based access control.
 
-First, run the development server:
+Project ini dibuat sebagai **technical test**.
 
+---
+## ⚙️ Cara Instalasi & Setup Lokal
+
+### 1️⃣ Clone Repository
 ```bash
+git clone https://github.com/AriqNaufalRabbani/inventory-user-management
+cd inventory-user-management
+
+2️⃣ Install Dependency
+npm install
+
+3️⃣ Import Database
+
+Buka phpMyAdmin
+Buat database baru: inventory_db
+Import file SQL yang tersedia di folder:
+/database/inventory_db.sql
+
+4️⃣ Setup Environment Variable
+Buat file .env
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=inventory_db
+
+NEXTAUTH_SECRET=super-secret-key
+NEXTAUTH_URL=http://localhost:3000
+
+5️⃣ Jalankan Aplikasi
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Akses aplikasi di:
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Show Documentation API
+http://localhost:3000/swagger
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔑 Akun Demo
+(tersedia di database SQL)
 
-## Learn More
+Admin
+admin@example.com
+ / admin123
 
-To learn more about Next.js, take a look at the following resources:
+Seller
+seller@example.com
+ / seller123
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Pelanggan
+customer@example.com
+ / customer123
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Next.js 14 (App Router)
+- React
+- Tailwind CSS & Framer Motion
+- MySQL
+- NextAuth (Credentials Provider)
+- mysql2
+- bcrypt
+- Swagger (OpenAPI)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📌 Fitur yang Sudah Dikerjakan
+
+### 🔐 Authentication
+- Login menggunakan email & password
+- Password di-hash menggunakan bcrypt
+- Session management menggunakan NextAuth (JWT)
+- Role user: **Admin**, **Seller**, **Pelanggan**
+
+### 📦 Inventory
+- Menampilkan daftar produk
+- Menambah produk (Admin & Seller)
+- Menjual produk (mengurangi stok)
+- Validasi stok agar tidak minus
+
+### 👤 User Management
+- Menampilkan daftar user (Admin only)
+- Mengubah role user (Admin only)
+
+### 📄 API Documentation
+- Dokumentasi API menggunakan **Swagger UI**
